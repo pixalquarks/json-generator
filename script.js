@@ -30,7 +30,6 @@ function generateJson() {
 
 let lightmode = localStorage.getItem("lightmode");
 lightmode = lightmode || "false";
-console.log(lightmode);
 
 if (lightmode === "true") {
   document.body.classList.add("light-mode");
