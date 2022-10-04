@@ -26,6 +26,24 @@ function generateJson() {
   return finished;
 }
 
+// for dark theme
+
+let lightmode = localStorage.getItem("lightmode");
+lightmode = lightmode || "false";
+console.log(lightmode);
+
+if (lightmode === "true") {
+  document.body.classList.add("light-mode");
+}
+
+(function () {
+  document.querySelector(".theme-btn").addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+    lightmode = lightmode === "true" ? "false" : "true";
+    localStorage.setItem("lightmode", lightmode);
+  });
+})();
+
 document.getElementById("generatebtn").onclick = function () {
   finished = generateJson();
 
